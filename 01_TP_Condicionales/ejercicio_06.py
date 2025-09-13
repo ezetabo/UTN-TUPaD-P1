@@ -17,3 +17,5 @@ elif media == mediana and media == mean:
     print("no hay sesgo")
 else:
     print("Los valores no cumplen el requisito para calcular el sesgo")
+
+    

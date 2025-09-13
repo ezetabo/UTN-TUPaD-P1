@@ -20,8 +20,7 @@
 # si el usuario se encuentra en otoño, invierno, primavera o verano.
 # Programa que determina la estación del año según hemisferio, mes y día
 
-# Pedir datos
-hemisferio = input("Ingrese el hemisferio (N/S): ").upper()
+hemisferio = input("Ingrese el hemisferio (norte/sur): ").lower()
 mes = input("Ingrese el mes (ejemplo: marzo): ").lower()
 dia = int(input("Ingrese el día: "))
 if (mes == "diciembre" and dia >= 21) or mes =="enero" or mes == "febrero" or (mes == "marzo" and dia <= 20):
