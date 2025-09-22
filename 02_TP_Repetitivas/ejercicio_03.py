@@ -6,3 +6,10 @@ suma = 0
 for i in range(inicio + 1, fin):
     suma += i
 print(f"La suma desde {inicio} hasta {fin}, sin incluir el {inicio} y el {fin} es {suma}")
+
+
+
+
+
+
+
