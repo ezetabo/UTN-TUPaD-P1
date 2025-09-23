@@ -13,56 +13,52 @@ titulos = []
 ejemplares = []
 
 while True:
-    mostrar_lista(opciones)
-    opcion = input("Elija una opcion: ")
-    match opcion:
-        case "1":
+    match pedir_opcion_listado("Elija una opcion: ",opciones):
+        case 1:
             print("\t Ingresar titulo (sin ejemplares)")
-        case "2":
+            while True:
+                titulo = pedir_cadena("Ingrese el titulo del libro que desea agregar: ")
+                if agregar_elemento(titulo,titulos):
+                    print("Titulo agregado correctamente")
+                    ejemplares.append(0)
+                    break
+                else:
+                    print("**ERROR** Ese titulo ya se existe, por favor ingrese uno nuevo")
+                    continue                
+        case 2:
             print("\t Ingresar ejemplares disponibles (sin titulo)")
-        case "3":
+            titulo = pedir_opcion_listado("Elija a que titulo le quiere agregar ejemplares: ",titulos)
+            cantidad = pedir_entero("Ingrese la cantidad de ejemplares: ",minimo=1,maximo=100)
+            agregar_por_indice(cantidad,ejemplares,titulo-1)
+        case 3:
             print("\t Mostrar catalogo")
-        case "4":
+            mostrar_lista(titulos,cantidad=50)
+        case 4:
             print("\t Consultar disponibilidad de un titulo especifico")
-        case "5":
+            titulo = pedir_opcion_listado("Elija a que titulo le quiere consultar: ",titulos)
+            nombre = obtener_indice(titulos,titulo-1)
+            mostrar_dos_listas_por_condicion(titulos,ejemplares,nombre)
+            
+        case 5:
             print("\t Listar agotados")
-        case "6":
+            mostrar_dos_listas_por_condicion(titulos,ejemplares,0,2)
+        case 6:
             print("\t Igresar titulo (con ejemplares)")
-        case "7":
+            while True:
+                titulo = pedir_cadena("Ingrese el titulo del libro que desea agregar: ")
+                if agregar_elemento(titulo,titulos):
+                    cantidad = pedir_entero("Ingrese la cantidad de ejemplares: ",minimo=1,maximo=100)
+                    ejemplares.append(cantidad)
+                    print("Titulo agregado correctamente")
+                    break
+                else:
+                    print("**ERROR** Ese titulo ya se existe, por favor ingrese uno nuevo")
+                    continue                
+        case 7:
             print("\t Actualizar ejemplares (prestamo/devolucion)")
-        case "8":
+        case 8:
             print("\t ver catalogo completo")
-        case "9":
+        case _:
             print("\t<<< Fin del programa >>>")
             break
-        case _:
-            print("\t***La opcion seleccionada no es valida***")
-'''titulos = ["El señor de los anillos", "Orgullo y prejuicio","Matar un ruiseñor"]
-ejemplares = [5,3,7]
 
-while True:
-    print("menú de opciones:")
-    print("1.Ingresar titulos. \n2.Ingresar ejemplares. \n3.Mostrar catálago. \n4.Consultar disponibilidad. \n5.Listar agotados.")
-    print("6.Agregar Título. \n7.Actualizar ejemplares (préstamo/devolución). \n8.Salir")
-    opcion = input("Seleccione una de las opciones: ")
-    match opcion:
-        case "1":
-            print("\t Ingreso de Titulo")
-        case "2":
-            print("\t Ingreso de Ejemplar")
-        case "3":
-            print("\t Mostrar Catalogo")
-        case "4":
-            print("\t Consultar Disponibles")
-        case "5":
-            print("\t Lista de agotados")
-        case "6":
-            print("\t Agregar")
-        case "7":
-            print("")
-        case "8":
-            print("\t<<< Fin del programa >>>")
-            break
-        case _:
-            print("\t***La opcion seleccionada no es valida***")
-'''
