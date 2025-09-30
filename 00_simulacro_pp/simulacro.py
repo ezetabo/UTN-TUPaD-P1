@@ -7,7 +7,6 @@ opciones = ["Ingresar titulo (sin ejemplares)",
             "Listar agotados",
             "Igresar titulo (con ejemplares)",
             "Actualizar ejemplares (prestamo/devolucion)",
-            "ver catalogo completo",
             "Salir"]
 titulos = []
 ejemplares = []
@@ -24,7 +23,7 @@ while True:
                     break
                 else:
                     print("**ERROR** Ese titulo ya se existe, por favor ingrese uno nuevo")
-                    continue                
+                    continue
         case 2:
             print("\t Ingresar ejemplares disponibles (sin titulo)")
             titulo = pedir_opcion_listado("Elija a que titulo le quiere agregar ejemplares: ",titulos)
