@@ -14,4 +14,10 @@ for i in range(cantidad):
         print(f'*** ERROR *** El nombre {nombre} ya existe, ingrese uno diferente.')
     telefono = ed.pedir_cadena_solo_numeros(f'Ingrese el numero de telefono de {nombre}: ')
     agenda_telefonica[nombre] = telefono
-cl.mostrar_dicc(agenda_telefonica)    
+ed.dibujar_titulo('agenda actual',char='=',cant=3)
+cl.mostrar_dicc(agenda_telefonica)
+ed.dibujar_titulo('buscar contacto',char='=',cant=3)
+contacto = ed.pedir_cadena_solo_letras(f'Ingrese el nombre que quiere consultar: ').lower()
+dato = agenda_telefonica.get(contacto,f'no existe en la agenda')
+print(f'\nEl N° de telefono de {contacto}: {dato}\n')
+
