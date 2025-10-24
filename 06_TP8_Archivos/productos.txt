@@ -1,0 +1,6 @@
+nombre,precio,cantidad
+lapicera,120.5,30
+cuaderno,350.0,15
+regla,45.0,50
+goma bicolor,500.0,5
+goma clasica,450.0,21
