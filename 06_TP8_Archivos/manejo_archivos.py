@@ -45,9 +45,7 @@ def leer_txt(ruta: str,productos:list[dict]) -> tuple[bool,str]:
             if len(partes) != 3:
                 errores_conversion.append(fila)
                 continue
-            nombre = partes[0].strip()
-            precio = partes[1].strip()
-            cantidad = partes[2].strip()
+            nombre,precio,cantidad = partes
             if not precio.replace('.', '', 1).isdigit() or not cantidad.isdigit() or not nombre:
                 errores_conversion.append(fila)
                 continue            
